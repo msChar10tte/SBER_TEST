@@ -9,6 +9,9 @@ public class Employees {
 
     }
 
+    /**
+     * Переопределение метода  toString
+     * */
 
     @Override
     public String toString() {
@@ -22,6 +25,9 @@ public class Employees {
         return Employees;
     }
 
+    /**
+     * Конструктор для инцилизации полей
+     * */
     public Employees(long id, String name_employees, long phone_employees, boolean status_employees, String date_) {
         this.id = id;
         this.name_employees = name_employees;
@@ -29,7 +35,9 @@ public class Employees {
         this.status_employees = status_employees;
         this.date_ = date_;
     }
-
+    /**
+     * Getter and Setter  дял всех полей
+     * */
     public long getId() {
         return id;
     }
