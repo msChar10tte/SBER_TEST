@@ -7,15 +7,11 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class BDUtils {
-//    private static String dbURL = "jdbc:h2:mem:test; INIT=RUNSCRIPT FROM 'classpath:init.sql";
-//    private static String dbUsername = "sa";
-//    private static String dbPassword = "";
-
     public static Connection getConnection(){
 
         String dbURL = null;
-        String dbUsername = "sa";
-        String dbPassword = "";
+        String dbUsername = null;
+        String dbPassword = null;
 
         FileInputStream fis;
         Properties properties =new Properties();
@@ -26,6 +22,8 @@ public class BDUtils {
             properties.load(fis);
 
             dbURL = properties.getProperty("db.host");
+            dbUsername = properties .getProperty("db.usermane");
+            dbPassword = properties .getProperty("db.password");
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
